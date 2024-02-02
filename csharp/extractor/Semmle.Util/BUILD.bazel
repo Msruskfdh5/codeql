@@ -1,0 +1,21 @@
+load(
+    "@rules_dotnet//dotnet:defs.bzl",
+    "csharp_library",
+)
+
+csharp_library(
+    name = "Semmle.Util",
+    srcs = glob([
+        "*.cs",
+        "Logging/*.cs",
+    ]),
+    nullable = "enable",
+    runtime_identifier = "osx-x64",
+    target_frameworks = ["net8.0"],
+    targeting_packs = ["@paket.csharp_extractor//microsoft.netcore.app.ref"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@paket.csharp_extractor//mono.posix.netstandard",
+        "@paket.csharp_extractor//newtonsoft.json",
+    ],
+)
