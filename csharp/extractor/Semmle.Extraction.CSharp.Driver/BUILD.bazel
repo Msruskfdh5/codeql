@@ -1,0 +1,17 @@
+load(
+    "@rules_dotnet//dotnet:defs.bzl",
+    "csharp_binary",
+)
+
+csharp_binary(
+    name = "Semmle.Extraction.CSharp.Driver",
+    srcs = glob([
+        "**/*.cs",
+    ]),
+    nullable = "enable",
+    target_frameworks = ["net8.0"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//csharp/extractor/Semmle.Extractor.CSharp",
+    ],
+)

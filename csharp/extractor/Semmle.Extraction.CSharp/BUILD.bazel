@@ -1,0 +1,21 @@
+load(
+    "@rules_dotnet//dotnet:defs.bzl",
+    "csharp_library",
+)
+
+csharp_library(
+    name = "Semmle.Extraction.CSharp",
+    srcs = glob([
+        "**/*.cs",
+    ]),
+    nullable = "enable",
+    target_frameworks = ["net8.0"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//csharp/extractor/Semmle.Extraction",
+        "//csharp/extractor/Semmle.Extraction.CSharp.Util",
+        "//csharp/extractor/Semmle.Util",
+        "@paket.csharp_extractor//microsoft.build",
+        "@paket.csharp_extractor//microsoft.codeanalysis.csharp",
+    ],
+)
