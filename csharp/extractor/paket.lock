@@ -9,7 +9,6 @@ NUGET
     Microsoft.NET.Test.Sdk (17.8)
       Microsoft.CodeCoverage (>= 17.8)
       Microsoft.TestPlatform.TestHost (>= 17.8)
-    Microsoft.NETCore.App.Ref (8.0.1)
     Microsoft.NETCore.Platforms (7.0.4)
     Microsoft.TestPlatform.ObjectModel (17.8)
       NuGet.Frameworks (>= 6.5)

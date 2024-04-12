@@ -3,7 +3,6 @@ group csharp_extractor
     storage: none
     source https://api.nuget.org/v3/index.json
 
-    nuget Microsoft.NETCore.App.Ref 8.0.1
     nuget Mono.Posix.NETStandard 1.0.0
     nuget Newtonsoft.Json 13.0.3
     nuget xunit 2.6.2

@@ -6,18 +6,15 @@ load(
 csharp_test(
     name = "Semmle.Util.Tests",
     srcs = glob([
-        "*.cs",
+        "**/*.cs",
     ]),
     nullable = "enable",
-    runtime_identifier = "osx-x64",
     target_frameworks = ["net8.0"],
-    targeting_packs = ["@paket.csharp_extractor//microsoft.netcore.app.ref"],
     deps = [
-        "//Semmle.Util",
+        "//csharp/extractor/Semmle.Util",
         "@paket.csharp_extractor//microsoft.net.test.sdk",
         "@paket.csharp_extractor//newtonsoft.json",
         "@paket.csharp_extractor//xunit",
-        "@paket.csharp_extractor//xunit.core",
         "@paket.csharp_extractor//xunit.runner.visualstudio",
     ],
 )

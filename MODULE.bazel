@@ -21,6 +21,17 @@ bazel_dep(name = "bazel_skylib", version = "1.5.0")
 bazel_dep(name = "abseil-cpp", version = "20240116.0", repo_name = "absl")
 bazel_dep(name = "nlohmann_json", version = "3.11.3", repo_name = "json")
 bazel_dep(name = "fmt", version = "10.0.0")
+bazel_dep(name = "rules_dotnet", version = "0.15.1")
+
+dotnet = use_extension("@rules_dotnet//dotnet:extensions.bzl", "dotnet")
+dotnet.toolchain(dotnet_version = "8.0.200")
+use_repo(dotnet, "dotnet_toolchains")
+
+register_toolchains("@dotnet_toolchains//:all")
+
+
+csharp_extractor_extension = use_extension("//csharp/extractor:paket.csharp_extractor_extension.bzl", "csharp_extractor_extension")
+use_repo(csharp_extractor_extension, "paket.csharp_extractor")
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 pip.parse(
