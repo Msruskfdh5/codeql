@@ -6,7 +6,9 @@ load(
 csharp_library(
     name = "Semmle.Util",
     srcs = glob([
-        "**/*.cs",
+        "Logging/**/*.cs",
+        "ToolStatusPage/**/*.cs",
+        "*.cs",
     ]),
     nullable = "enable",
     target_frameworks = ["net8.0"],

@@ -6,14 +6,17 @@ load(
 csharp_library(
     name = "Semmle.Extraction",
     srcs = glob([
-        "**/*.cs",
+        "Entities/**/*.cs",
+        "Extractor/**/*.cs",
+        "*.cs",
     ]),  # TODO debug constants
     nullable = "enable",
     target_frameworks = ["net8.0"],
     visibility = ["//visibility:public"],
     deps = [
         "//csharp/extractor/Semmle.Util",
-        "@paket.csharp_extractor//gitinfo",
+        # "@paket.csharp_extractor//gitinfo",
+        # "@paket.csharp_extractor//thisassembly.git",
         "@paket.csharp_extractor//microsoft.build",
         "@paket.csharp_extractor//microsoft.codeanalysis",
     ],
