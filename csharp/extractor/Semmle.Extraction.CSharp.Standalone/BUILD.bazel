@@ -5,7 +5,7 @@ load(
 )
 
 csharp_binary(
-    name = "Semmle.Extraction.CSharp.Driver",
+    name = "Semmle.Extraction.CSharp.Standalone",
     srcs = glob([
         "*.cs",
     ]),
@@ -14,12 +14,14 @@ csharp_binary(
     visibility = ["//visibility:public"],
     deps = [
         "//csharp/extractor/Semmle.Extraction.CSharp",
+        "//csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching",
+        "//csharp/extractor/Semmle.Util",
     ],
 )
 
 publish_binary(
     name = "binary",
-    binary = ":Semmle.Extraction.CSharp.Driver",
+    binary = ":Semmle.Extraction.CSharp.Standalone",
     runtime_identifier = "osx-x64",
     self_contained = True,
     target_framework = "net8.0",

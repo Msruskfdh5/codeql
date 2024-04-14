@@ -11,6 +11,7 @@ group csharp_extractor
     nuget Microsoft.CodeAnalysis.CSharp 4.8.0
     nuget Microsoft.CodeAnalysis 4.8.0
     nuget Microsoft.Build 17.8.3
-    nuget GitInfo 3.3.3 copy_local: true # TODO private assets, see Semmle.Extraction.csproj
-    nuget ThisAssembly.Git 1.4.3
-    
+    nuget Microsoft.Win32.Primitives 4.3.0
+    nuget System.Net.Primitives 4.3.1
+    nuget System.Security.Principal 4.3.0
+    nuget System.Threading.ThreadPool 4.3.0

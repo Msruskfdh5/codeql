@@ -4,25 +4,17 @@ load(
 )
 
 csharp_library(
-    name = "Semmle.Extraction.CSharp",
+    name = "Semmle.Extraction.CSharp.StubGenerator",
     srcs = glob([
-        "Comments/**/*.cs",
-        "Entities/**/*.cs",
-        "Extractor/**/*.cs",
-        "Kinds/**/*.cs",
-        "Populators/**/*.cs",
-        "Properties/**/*.cs",
         "*.cs",
     ]),
-    allow_unsafe_blocks = True,
     nullable = "enable",
     target_frameworks = ["net8.0"],
     visibility = ["//visibility:public"],
     deps = [
-        "//csharp/extractor/Semmle.Extraction",
+        "//csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching",
         "//csharp/extractor/Semmle.Extraction.CSharp.Util",
         "//csharp/extractor/Semmle.Util",
-        "@paket.csharp_extractor//microsoft.build",
         "@paket.csharp_extractor//microsoft.codeanalysis.csharp",
     ],
 )

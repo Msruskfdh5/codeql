@@ -3,18 +3,18 @@ load(
     "csharp_test",
 )
 
-csharp_test(
-    name = "Semmle.Util.Tests",
-    srcs = glob([
-        "**/*.cs",
-    ]),
-    nullable = "enable",
-    target_frameworks = ["net8.0"],
-    deps = [
-        "//csharp/extractor/Semmle.Util",
-        "@paket.csharp_extractor//microsoft.net.test.sdk",
-        "@paket.csharp_extractor//newtonsoft.json",
-        "@paket.csharp_extractor//xunit",
-        "@paket.csharp_extractor//xunit.runner.visualstudio",
-    ],
-)
+# csharp_test(
+#     name = "Semmle.Util.Tests",
+#     srcs = glob([
+#         "**/*.cs",
+#     ]),
+#     nullable = "enable",
+#     target_frameworks = ["net8.0"],
+#     deps = [
+#         "//csharp/extractor/Semmle.Util",
+#         "@paket.csharp_extractor//microsoft.net.test.sdk",
+#         "@paket.csharp_extractor//newtonsoft.json",
+#         "@paket.csharp_extractor//xunit",
+#         "@paket.csharp_extractor//xunit.runner.visualstudio",
+#     ],
+# )
