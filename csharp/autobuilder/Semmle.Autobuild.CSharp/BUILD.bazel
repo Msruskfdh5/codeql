@@ -1,10 +1,9 @@
 load(
-    "@rules_dotnet//dotnet:defs.bzl",
-    "csharp_binary",
-    "publish_binary",
+    "//misc/bazel:csharp.bzl",
+    "codeql_csharp_binary",
 )
 
-csharp_binary(
+codeql_csharp_binary(
     name = "Semmle.Autobuild.CSharp",
     srcs = glob([
         "*.cs",
@@ -20,12 +19,4 @@ csharp_binary(
         "@paket.csharp_extractor//microsoft.build",
         "@paket.csharp_extractor//newtonsoft.json",
     ],
-)
-
-publish_binary(
-    name = "binary",
-    binary = ":Semmle.Autobuild.CSharp",
-    runtime_identifier = "osx-x64",
-    self_contained = True,
-    target_framework = "net8.0",
 )
