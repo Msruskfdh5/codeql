@@ -1,9 +1,9 @@
 load(
-    "@rules_dotnet//dotnet:defs.bzl",
-    "csharp_library",
+    "//misc/bazel:csharp.bzl",
+    "codeql_csharp_library",
 )
 
-csharp_library(
+codeql_csharp_library(
     name = "Semmle.Util",
     srcs = glob([
         "Logging/**/*.cs",

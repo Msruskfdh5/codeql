@@ -1,28 +1,17 @@
 load(
-    "@rules_dotnet//dotnet:defs.bzl",
-    "csharp_binary",
-    "publish_binary",
+    "//misc/bazel:csharp.bzl",
+    "codeql_csharp_binary",
 )
 
-csharp_binary(
+codeql_csharp_binary(
     name = "Semmle.Extraction.CSharp.Standalone",
     srcs = glob([
         "*.cs",
     ]),
-    nullable = "enable",
-    target_frameworks = ["net8.0"],
     visibility = ["//visibility:public"],
     deps = [
         "//csharp/extractor/Semmle.Extraction.CSharp",
         "//csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching",
         "//csharp/extractor/Semmle.Util",
     ],
-)
-
-publish_binary(
-    name = "binary",
-    binary = ":Semmle.Extraction.CSharp.Standalone",
-    runtime_identifier = "osx-x64",
-    self_contained = True,
-    target_framework = "net8.0",
 )
