@@ -10,8 +10,6 @@ codeql_csharp_library(
         "ToolStatusPage/**/*.cs",
         "*.cs",
     ]),
-    nullable = "enable",
-    target_frameworks = ["net8.0"],
     visibility = ["//visibility:public"],
     deps = [
         "@paket.csharp_extractor//mono.posix.netstandard",

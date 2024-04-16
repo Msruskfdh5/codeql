@@ -8,7 +8,7 @@ codeql_csharp_binary(
     srcs = glob([
         "*.cs",
     ]),
-    visibility = ["//visibility:public"],
+    visibility = ["//csharp:__pkg__"],
     deps = [
         "//csharp/extractor/Semmle.Extraction.CSharp",
         "//csharp/extractor/Semmle.Extraction.CSharp.DependencyFetching",

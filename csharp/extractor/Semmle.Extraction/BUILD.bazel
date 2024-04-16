@@ -10,7 +10,7 @@ codeql_csharp_library(
         "Extractor/**/*.cs",
         "*.cs",
     ]),  # TODO debug constants
-    visibility = ["//visibility:public"],
+    visibility = ["//csharp:__subpackages__"],
     deps = [
         "//csharp/extractor/Semmle.Util",
         # "@paket.csharp_extractor//gitinfo",
