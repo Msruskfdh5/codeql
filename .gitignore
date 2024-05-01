@@ -62,3 +62,6 @@ node_modules/
 
 # Temporary folders for working with generated models
 .model-temp
+
+# paket C# dependency manager files
+paket-files/
